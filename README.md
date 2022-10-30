@@ -1,1 +1,186 @@
 # post-lab-task
+#include <stdio.h>
+int menue(void);
+int Firstclass (int array[], int size);
+int economy (int array[], int size);
+int main ()
+{
+ menue();
+ 
+  return 0;
+}
+
+
+int menue(void)
+{
+    int opp;
+    static int array[100] = { 0 };
+     puts
+    ("\t*******************************************************************************************************");
+  printf
+    ("\t\t\t1.Display seating\t\t\t2.First class\n\t\t\t3.Economy class\t\t\t\t4.Exist\n");
+  puts
+    ("\t*******************************************************************************************************");
+  puts ("\t\t\tSelect an option");
+  scanf ("%d", &opp);
+  if (opp == 1)
+    {
+
+    }
+  if (opp == 2)
+    {
+      Firstclass (array, 30);
+    }
+  if (opp == 3)
+    {
+      economy (array, 100);
+    }
+  if (opp == 4)
+    {
+  
+    }
+}
+
+
+int
+Firstclass (int array[], int size)
+{
+  int opp = 2;
+  int re;
+  int originals, seat, i = 0;
+ static int flag = 0;
+  puts ("Select seat number(1-30): ");
+  scanf ("%d", &seat);
+  originals = seat;
+  seat = seat - 1;
+  if (originals <= 30 && originals != 0 && originals>0)
+    {
+    
+	  if (array[seat] == 0)
+	    {
+	      flag = 0;
+	    }
+	  else if(array[seat] !=0)
+	    {
+	      flag = flag + 1;
+	     
+	    }
+	
+      if (flag == 0)
+	{
+	  for (int i = 0; i < 30; i++)
+	    {
+	      if (seat == i)
+		{
+		  array[i] = 1;
+		}
+	    }
+	}
+	if (flag != 0)
+	{
+	    puts("Your seat is already reserved");
+	}
+    }
+    else if(originals<=0)
+    {
+        puts("out of range");
+    }
+  else if(originals>30)
+    {
+      printf ("out of class\n");
+    }
+  if (originals <= 30 && flag == 0 && originals>0)
+    {
+      for (int j = 0; j < 100; j++)
+	{
+	  i = i + 1;
+	  printf ("%d ", array[j]);
+	  if (i % 10 == 0 && i != 0)
+	    {
+	      puts ("");
+	    }
+	}
+      puts ("Do you want body pass");
+      puts("Please Enter 1");
+      scanf ("%d", &re);
+      if (re == 1)
+	{
+	  
+	}
+    }
+    
+   menue();
+}
+
+int
+economy (int array[], int size)
+{
+  int re;
+  int opp = 3;
+  int flag = 0;
+  int originals, seat, i = 0;
+  puts ("Select seat number(31-100): ");
+  scanf ("%d", &seat);
+  originals = seat;
+  seat = seat - 1;
+  if (originals >= 31 && originals <= 100)
+    {
+     
+	  if (array[seat] == 0)
+	    {
+	      flag = 0;
+	    }
+	  else if (array[seat] != 0)
+	    {
+	      flag = 1;
+	    }
+	
+      if (flag == 0)
+	{
+	  for (int i = 31; i <= 100; i++)
+	    {
+	      if (seat == i)
+		{
+		  array[i] = 1;
+		}
+	    }
+	}
+		if (flag != 0)
+	{
+	    puts("Your seat is already reserved");
+	}
+    }
+  else if (originals < 31 && originals>0)
+    {
+      puts ("out of class");
+    }
+    else if(originals<0)
+    {
+           puts ("seat is out of range");   
+    }
+  else if (originals > 100)
+    {
+      puts ("seat is out of range");
+    }
+  if (seat <= 100 && seat >= 31 && flag==0)
+    {
+      for (int j = 0; j < 100; j++)
+	{
+	  i = i + 1;
+	  printf ("%d ", array[j]);
+	  if (i % 10 == 0 && i != 0)
+	    {
+	      puts ("");
+	    }
+	}
+  puts ("Do you want body pass");
+  puts ("Please Enter 1");
+  scanf ("%d", &re);
+  if (re == 1)
+    {
+    
+    }
+    }
+    menue();
+}
+
