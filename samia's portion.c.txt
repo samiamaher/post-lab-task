@@ -1,7 +1,10 @@
 #include <stdio.h>
 int menue(void);
+int display (int array[], int size);
 int Firstclass (int array[], int size);
 int economy (int array[], int size);
+int bodypass (int opp, int seat);
+int exits(int arr[]);
 int main ()
 {
  menue();
@@ -36,7 +39,7 @@ int menue(void)
     }
   if (opp == 4)
     {
-  
+ exits(array);
     }
 }
 
@@ -104,7 +107,7 @@ Firstclass (int array[], int size)
       scanf ("%d", &re);
       if (re == 1)
 	{
-	  
+	 bodypass (opp, originals);  
 	}
     }
     
@@ -177,7 +180,7 @@ economy (int array[], int size)
   scanf ("%d", &re);
   if (re == 1)
     {
-    
+     bodypass (opp, originals);
     }
     }
     menue();
