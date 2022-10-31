@@ -27,7 +27,7 @@ int menue(void)
   scanf ("%d", &opp);
   if (opp == 1)
     {
-
+display(array,100);
     }
   if (opp == 2)
     {
