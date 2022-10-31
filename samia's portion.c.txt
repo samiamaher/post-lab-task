@@ -1,4 +1,3 @@
-# post-lab-task
 #include <stdio.h>
 int menue(void);
 int Firstclass (int array[], int size);
