@@ -26,8 +26,7 @@ int menue(void)
   puts ("\t\t\tSelect an option");
   scanf ("%d", &opp);
   if (opp == 1)
-    {
-
+    {display(array,100);
     }
   if (opp == 2)
     {
@@ -184,30 +183,6 @@ economy (int array[], int size)
     }
     }
     menue();
-}
-int menue(void)
-{
-    int opp;
-    static int array[100] = { 0 };
-    puts
-    ("\t***********************************");
-    printf
-    ("\t\t\t1.Display seating\t\t\t2.First class\n\t\t\t3.Economy class\t\t\t\t4.Exist\n");
-    puts
-    ("\t***********************************");
-    puts("\t\t\tSelect an option");
-    scanf_s("%d", &opp);
-    if (opp == 1)
-    {
-        display(array, 100);
-        puts("Select an option");
-        scanf_s("%d", &opp);
-
-    }
-    if (opp == 4)
-    {
-        exits(array);
-    }
 }
 
 int display(int array[], int size)
